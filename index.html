@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Developer Portfolio</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f5f7fb;
+        color: #222;
+        line-height: 1.6;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 15px 8%;
+        background: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 10px #0001;
+        z-index: 100;
+      }
+
+      .logo {
+        font-size: 22px;
+        font-weight: bold;
+        color: #2563eb;
+      }
+
+      nav a {
+        color: #333;
+        text-decoration: none;
+        margin-left: 22px;
+      }
+
+      nav a:hover {
+        color: #2563eb;
+      }
+
+      #theme {
+        border: 0;
+        background: #eef2ff;
+        padding: 8px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      section {
+        padding: 90px 8%;
+        max-width: 1100px;
+        margin: auto;
+      }
+
+      #home {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .intro {
+        flex: 1;
+      }
+
+      .intro h1 {
+        font-size: 48px;
+        margin: 10px 0;
+      }
+
+      .intro h1 span {
+        color: #2563eb;
+      }
+
+      .intro h2 {
+        color: #555;
+        font-size: 24px;
+      }
+
+      .intro p {
+        margin: 20px 0;
+        color: #666;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 11px 20px;
+        background: #2563eb;
+        color: white;
+        text-decoration: none;
+        border-radius: 7px;
+        margin-right: 8px;
+      }
+
+      .btn:hover {
+        background: #1d4ed8;
+      }
+
+      .photo {
+    width: 350px;
+    height: 350px;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+      .title {
+        text-align: center;
+        margin-bottom: 35px;
+        font-size: 32px;
+      }
+
+      .about {
+        max-width: 800px;
+        margin: auto;
+        text-align: center;
+        color: #666;
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .skill {
+        background: white;
+        padding: 10px 18px;
+        border-radius: 20px;
+        box-shadow: 0 2px 8px #0001;
+      }
+
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .card {
+        background: white;
+        padding: 22px;
+        border-radius: 10px;
+        box-shadow: 0 3px 12px #0001;
+      }
+
+      .card h3 {
+        margin-bottom: 8px;
+        color: #2563eb;
+      }
+
+      .card p {
+        color: #666;
+        font-size: 14px;
+      }
+
+      .card a {
+        display: inline-block;
+        margin-top: 15px;
+        color: #2563eb;
+        text-decoration: none;
+      }
+
+      .education {
+        max-width: 700px;
+        margin: auto;
+      }
+
+      .edu {
+        background: white;
+        padding: 20px;
+        margin-bottom: 15px;
+        border-left: 4px solid #2563eb;
+        box-shadow: 0 2px 8px #0001;
+      }
+
+      .contact {
+        text-align: center;
+      }
+
+      .contact p {
+        margin: 10px;
+        color: #666;
+      }
+
+      footer {
+        text-align: center;
+        padding: 25px;
+        background: #111827;
+        color: white;
+      }
+
+      .dark {
+        background: #111827;
+        color: #eee;
+      }
+
+      .dark nav,
+      .dark .card,
+      .dark .skill,
+      .dark .edu {
+        background: #1f2937;
+      }
+
+      .dark nav a {
+        color: #eee;
+      }
+
+      .dark nav a:hover {
+        color: #60a5fa;
+      }
+
+      .dark .intro h2,
+      .dark p,
+      .dark .about,
+      .dark .card p,
+      .dark .contact p {
+        color: #bbb;
+      }
+
+      .dark #theme {
+        background: #374151;
+        color: white;
+      }
+
+      @media (max-width: 750px) {
+        nav {
+          padding: 15px 5%;
+        }
+
+        nav div:nth-child(2) {
+          display: none;
+        }
+
+        section {
+          padding: 80px 6%;
+        }
+
+        #home {
+          flex-direction: column-reverse;
+          justify-content: center;
+          text-align: center;
+        }
+
+        .intro h1 {
+          font-size: 38px;
+        }
+
+        .projects {
+          grid-template-columns: 1fr;
+        } 
+
+        
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo">Atharva V. Aminbhavi</div>
+
+      <div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <button id="theme">🌙</button>
+    </nav>
+
+    <section id="home">
+      <div class="intro">
+        <p>Hello, I'm</p>
+
+        <h1>Atharva V. Aminbhavi <span> Java Developer</span></h1>
+
+        <h2>MCA Student & Full Stack Developer</h2>
+
+        <p>
+          I enjoy building web applications, learning new technologies and
+          solving real-world problems through code.
+        </p>
+
+        <a class="btn" href="#projects">View Projects</a>
+        <a class="btn" href="resume.pdf" download>Resume</a>
+      </div>
+
+      <div class="photo">
+        <img src="assets/profile.png" alt="Profile Photo" />
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="title">About Me</h2>
+
+      <div class="about">
+        <p>
+          I am an MCA student interested in Full Stack Development, Java, Python
+          and Cyber Security. I like creating practical projects and
+          continuously improving my programming skills.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="title">My Skills</h2>
+
+      <div class="skills">
+        <div class="skill">Java</div>
+        <div class="skill">Python</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">React</div>
+        <div class="skill">MySQL</div>
+        <div class="skill">Git & GitHub</div>
+        <div class="skill">Cyber Security</div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="title">Projects</h2>
+
+      <div class="projects">
+        <div class="card">
+          <h3>Debugging-the-Challenge</h3>
+          <p>
+            Debugging the Challenge is a web application designed to conduct
+            programming and debugging competitions through multiple rounds of
+            coding challenges.
+          </p>
+          <a href="#">View Project →</a>
+        </div>
+
+        <div class="card">
+          <h3>StegaVision - A LSB steganography</h3>
+          <p>
+            StegaVision is a Java-based desktop application designed for
+            securely hiding and extracting secret messages inside digital images
+            using Least Significant Bit (LSB) steganography.
+          </p>
+          <a href="#">View Project →</a>
+        </div>
+
+        <div class="card">
+          <h3>Image Classification</h3>
+          <p>
+            An image classification application using a React interface and
+            Python-based processing.
+          </p>
+          <a href="#">View Project →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2 class="title">Education</h2>
+
+      <div class="education">
+        <div class="edu">
+          <h3>Master of Computer Applications</h3>
+          <p>MCA • Currently Pursuing</p>
+        </div>
+
+        <div class="edu">
+          <h3>Bachelor's degree</h3>
+          <p>Bachelors in computer application.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="title">Let's Connect</h2>
+
+      <div class="contact">
+        <p>Interested in working together or discussing a project?</p>
+
+        <a class="btn" href="mailto:aminbhaviatharva@gmail.com"> Email Me </a>
+
+        <a class="btn" href="https://github.com/FineFur" target="_blank">
+          GitHub
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        © 2026 Atharva V. Aminbhavi. <br />Built with HTML, CSS & JavaScript.
+      </p>
+    </footer>
+
+    <script>
+      const button = document.getElementById("theme");
+
+      button.onclick = function () {
+        document.body.classList.toggle("dark");
+
+        if (document.body.classList.contains("dark")) {
+          button.textContent = "☀️";
+        } else {
+          button.textContent = "🌙";
+        }
+      };
+    </script>
+  </body>
+</html>
